@@ -1,0 +1,149 @@
+@import './variables/variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  height: 100vh;
+  width: 100%;
+
+  @media #{$mobile_device} {
+    grid-template-columns: 100%;
+    display: grid;
+    grid-template-rows: 200px auto;
+  }
+
+  .left-panel {
+    background: url('../images/sun-setting-silhouette-electricity-pylons 1.png') no-repeat center center / cover;
+    position: relative;
+    display: grid;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 100%;
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.48) 0%, rgba(210, 233, 218, 0.85) 88%);
+    }
+
+
+    .logo {
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+
+      img {
+        width: 60%;
+        margin-bottom: 20px;
+
+        @media #{$mobile_device} {
+          width: 150px;
+        }
+      }
+
+      h1 {
+        font-size: 20px;
+        background: rgb(17 63 141 / 46%);
+        padding: 14px;
+        line-height: 30px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1px);
+        border: 1.5px solid rgb(12 54 79 / 30%);
+        letter-spacing: 0.5px;
+      }
+
+      .green {
+        color: #3ddc84;
+        font-weight: bold;
+      }
+
+    }
+  }
+
+  .right-panel {
+    background: url('../images/2656588 1.png') no-repeat center center / cover;
+    display: grid;
+    place-items: center;
+    padding: 40px;
+
+    .grid-container {
+      width: 100%;
+      max-width: 400px;
+      display: grid;
+      gap: 20px;
+
+      .grid-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 17px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        transform: scale(1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.7px);
+        -webkit-backdrop-filter: blur(5.7px);
+        border-top: 1px solid rgb(255 255 255 / 30%);
+        border-bottom: 1px solid rgb(255 255 255 / 30%);
+
+        &:hover {
+          transform: scale(1.15);
+          background-color: inherit;
+        }
+
+        span {
+          text-align: left;
+          font-size: 16px;
+          color: white;
+          letter-spacing: 0.5px;
+        }
+
+        &.item1 {
+          background: rgb(255 145 145 / 22%);
+        }
+
+
+        &.item2 {
+          background: rgb(123 201 74 / 33%);
+        }
+
+        &.item3 {
+          background: rgb(150 52 172 / 30%);
+        }
+
+        &.item4 {
+          background: rgb(155 113 35 / 54%);
+        }
+
+        &.item5 {
+          background: rgb(22 140 113 / 29%);
+        }
+
+        img {
+          width: 45px;
+        }
+      }
+    }
+  }
+}
